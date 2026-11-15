@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+  <link rel="icon" href="hutao icon.png" type="images/x-icon">
+  <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../assets/js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Best Service Guarantee</title>
+   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+ <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+ <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+ <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script> //script toggle  
+
+  function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+      // Save the mode in local storage
+      if (document.body.classList.contains('dark-mode')) {
+          localStorage.setItem('theme', 'dark');
+      } else {
+          localStorage.setItem('theme', 'light');
+      }
+  }
+
+  // Load the mode from local storage
+  window.onload = function() {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+          document.body.classList.add('dark-mode');
+      }
+  }
+
+
+  function setTheme(theme) {
+      if (theme === 'dark') {
+          document.body.classList.add('dark-mode');
+          localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+  }
+
+  // Load the theme from local storage
+  window.onload = function() {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+          document.body.classList.add('dark-mode');
+      } else {
+          document.body.classList.remove('dark-mode');
+      }
+  }
+
+  function setTheme(theme) { 
+      if (theme === 'dark') { 
+        document.body.classList.add('dark-mode'); 
+        document.querySelectorAll('.floatingInput, .floatingPassword').forEach(element => { 
+          element.classList.add('dark-mode'); }); 
+          localStorage.setItem('theme', 'dark'); } 
+
+      else { 
+        document.body.classList.remove('dark-mode'); 
+        document.querySelectorAll('.floatingInput, .floatingPassword').forEach(element => { 
+          element.classList.remove('dark-mode'); }); 
+          localStorage.setItem('theme', 'light'); } 
+        }
+      
+
+  // Load the theme from local storage 
+  window.onload = function() {
+     const theme = localStorage.getItem('theme'); 
+     if (theme === 'dark') { 
+      document.body.classList.add('dark-mode'); 
+      document.querySelectorAll('.floatingInput, .floatingPassword').forEach(element => { 
+        element.classList.add('dark-mode'); }); 
+      }
+      // Get the current counter value from local storage
+      let counter = localStorage.getItem('counter');
+
+    // If no counter value exists, initialize it to 50
+    if (!counter) {
+        counter = 50;
+    } else {
+        counter = parseInt(counter);
+    }
+
+    // Function to update the counter value and display it
+    function updateCounter() {
+        counter++;
+        document.getElementById('counterLink').innerText = 'UwU:' + counter;
+        localStorage.setItem('counter', counter);
+    }
+
+    // Update the counter every 0.3 seconds
+    setInterval(updateCounter, 300);
+
+    // Display the initial counter value
+    document.getElementById('counterLink').innerText = 'UwU:' + counter;
+        }
+
+
+       
+        
+
+    document.addEventListener("DOMContentLoaded", function() {
+      generateRandomNames();
+    });
+
+    const names = [
+  "Albedo", "Alhaitham", "Aloy", "Amber", "Arataki Itto", "Arlecchino", "Aether", "Baizhu", "Barbara", "Beidou",
+  "Bennett", "Candace", "Charlotte", "Chasca", "Chevreuse", "Chiori", "Chongyun", "Clorinde", "Collei",
+  "Cyno", "Dehya", "Diluc", "Diona", "Dori", "Emilie", "Eula", "Faruzan", "Fischl", "Freminet",
+  "Furina", "Gaming", "Ganyu", "Gorou", "Hu Tao", "Itto", "Jean", "Kaedehara Kazuha", "Kaeya",
+  "Kamisato Ayaka", "Kamisato Ayato", "Kaveh", "Keqing", "Kinich", "Kirara", "Klee", "Kokomi", "Layla",
+  "Lisa", "Lumine (Traveler)", "Lynette", "Lyney", "Mika", "Mona", "Nahida", "Nilou", "Ningguang",
+  "Noelle", "Qiqi", "Raiden Shogun", "Razor", "Rosaria", "Sangonomiya Kokomi", "Sayu", "Shenhe",
+  "Shikanoin Heizou", "Sucrose", "Tartaglia (Childe)", "Thoma", "Tighnari", "Venti", "Wanderer (Scaramouche)", "Xiangling", "Xiao", "Xingqiu", "Xinyan", "Yaoyao", "Yelan",
+  "Yoimiya", "Yun Jin", "Zhongli"
+];
+
+    function generateRandomNames() {
+      const listItems = document.querySelectorAll(".list-group .random-name");
+      
+      listItems.forEach(item => {
+        const randomIndex = Math.floor(Math.random() * names.length);
+        item.textContent = names[randomIndex];
+      });
+    }
+
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id))
+    {js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+    fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+
+
+
+    function openLocalFile1() {
+            window.location.href = '1.html';
+        }
+        function openLocalFile2() {
+            window.location.href = '2.html';
+        }
+        function openLocalFile3() {
+            window.location.href = '3.html';
+        }
+
+     
+        function searchInPage() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const elements = document.querySelectorAll('body *:not(script):not(style):not(meta):not(link)');
+            clearHighlights();
+            let found = false;
+
+            elements.forEach(element => {
+                if (element.children.length === 0 && element.innerText.toLowerCase().includes(input)) {
+                    const regex = new RegExp(input, 'gi');
+                    element.innerHTML = element.innerHTML.replace(regex, match => `<span class="highlight">${match}</span>`);
+                    found = true;
+                }
+            });
+
+            if (found) {
+                const firstMatch = document.querySelector('.highlight');
+                firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                alert("Text not found.");
+            }
+        }
+
+        function clearHighlights() {
+            const highlightedElements = document.querySelectorAll('.highlight');
+            highlightedElements.forEach(element => {
+                const parent = element.parentNode;
+                parent.replaceChild(document.createTextNode(element.innerText), element);
+                parent.normalize();
+            });
+        }
+        
+    </script>
+
+<!--symbols for light and dark mode toggle-->
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+
+</head>
+
+
+
+    <style>
+
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-black-bg: #000000;
+        --bd-black-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-black-bg);
+        --bs-btn-border-color: var(--bd-black-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #000000;
+        --bs-btn-hover-border-color: #000000;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #000000;
+        --bs-btn-active-border-color: #000000;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+
+
+      header {
+        background-color: transparent;
+        color: white;
+        width: 100%;
+        height: 150px;
+      }
+
+      .dropdown {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      
+
+      .container-fluid {
+      	  opacity: 0.5; /* Sets the background image to 50% transparency */ 
+
+      }
+
+	.golden-text 
+			{ color: #FFD700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6); } 
+
+
+
+  .image-container1 { position: relative; 
+    width: 500px; /* Adjust as needed */ 
+    height: 400px; /* Adjust as needed */ 
+  } 
+      
+      
+  .image-container1 img { width: 100%; height: 100%; display: block; }
+  
+  
+  .overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    margin-top: 27.6%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */ 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: left;
+    opacity: 0; 
+    transition: opacity 0.3s ease; } 
+  
+    .image-container1:hover .overlay { opacity: 1; }
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+
+     
+      .highlight { background-color: yellow; }   
+      
+      
+ .color-change 
+
+{ animation: colorchange 0.5s infinite;
+		}
+
+
+		@keyframes colorchange {
+
+			0%{
+				color: 	rgb(255, 0, 0);
+			}
+			14%{
+				color: 	rgb(255, 64, 0);
+			}
+			28%{
+				color: 	rgb(255, 128, 0);
+			}
+			42%{
+				color: rgb(255, 191, 0);
+			}
+			56%{
+				color: rgb(255, 102, 0)	;
+			}
+			70%{
+				color: rgb(255, 128, 0);
+			}
+			84%{
+				color: rgb(255, 64, 0);
+			}
+			100%{
+				color: rgb(255, 0, 0);
+			}
+    }
+
+    :root {
+      ---bs-secondary-color: rgba(50, 50, 50, 0.6);
+    }
+
+    .element{
+      fill: var(---bs-secondary-color);
+    }
+
+    .nav-link.active {
+    background-color: rgb(255, 166, 0) !important;
+    color: rgb(255, 255, 255) !important;
+    border-color: rgb(255, 255, 255);
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.custom-button {
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 20px;
+  color: rgb(255, 255, 255) !important;
+}
+
+.btn-primary {
+  background-color: rgb(255, 166, 0) !important;
+  border-color: rgb(255, 255, 255);
+}
+
+.btn-secondary {
+  background-color: rgb(255, 166, 0) !important;
+  border-color: rgb(255, 255, 255);
+}
+
+.custom-gap {
+  gap: 18%;
+  padding-left: 18%;
+}
+
+.custom-button {
+  margin-top: -5%;
+}
+
+/* Add a black background color to the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgb(255, 255, 255);
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background-color: #ffc400;
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  border: none;
+  height: 50px;
+  width: 100%;
+  font-size: 17px;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+        /* Default Background */
+        body {
+        background-image: url("https://cdn11.bigcommerce.com/s-ccerkj57m6/images/stencil/1280x1280/products/285/691/3d_White_Hearts__20621.1540156135.jpg?c=2");
+        background-position: center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: rgb(0, 0, 0);
+        transition: background-color 0.5s, color 0.5s;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+        background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20231104/pngtree-texture-of-black-paper-hearts-as-a-captivating-background-image_13741704.png");
+        background-position: center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+      }
+
+     
+            .weather-widget {
+              background-color: rgba(0, 0, 0, 0.8);
+              color: white;
+              border-color: rgba(0, 0, 0, 0.8);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 335px;
+              margin-top: 11%;
+              text-align: center;
+            }
+
+
+
+
+</style>
+
+
+
+<header>
+<!--banner + icon-->
+    <div class="container-fluid" style="height: 165% ; width: 100%; ; padding: 20px; background-image: url(https://img.freepik.com/premium-vector/chinese-banner-design-with-frame-flowers-red-pattern-background-your-copy-space_38409-2221.jpg?w=996); background-repeat: round; opacity: 1; ">
+        <div class="col-sm-6" style="background-image: url('Hu_Tao_Wish.webp'); width: 640px; height: 300px; margin-left: -2%; margin-top: -5%; background-size: contain;">
+            </div>
+
+          <ul class="nav nav-pills" style="float: right; margin-top: -17%;">
+              
+            <li class="nav-item">
+              <a href="2.html" class="nav-link golden-text" style="padding-top: 15%; font-size: 40px;" onclick="openLocalFile2()">
+                <b> Lovely Death </b>
+              </a>
+          </li>              
+
+              <li class="nav-item">
+                <a href="#" class="nav-link" style="color: rgb(255, 255, 255);">
+
+                    <img src="hutao icon.png" style="width: 150px; height: 150px;">
+          
+                  </a>
+              </li>
+          </ul>
+      </div>
+    </div>
+
+
+  <!--toggle dark, light mode-->
+    <div class="dropdown bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+          <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+          <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+          <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false" onclick="setTheme('light')">
+                  <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                  Light
+                  <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+              </button>
+          </li>
+          <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false" onclick="setTheme('dark')">
+                  <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+                  Dark
+                  <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+              </button>
+          </li>
+      </ul>
+  </div>
+
+
+  
+ <!--below header (home card)-->
+ <div class="container-fluid" style="width: 100%; background-color: rgb(0,0,0,0.9); opacity: 1;">
+  <header class="d-flex flex-wrap justify-content-center py-5 mb-4 border-bottom">
+    <ul class="nav nav-pills" style="gap: 100px;">
+      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" onclick="openLocalFile3()"><b>Contact</b></a></li>
+      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" onclick="openLocalFile2()"><b>Main Page</b></a></li>
+      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" onclick="openLocalFile1()"><b>Products</b></a></li>
+      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" onclick="openLocalFile3()"><b>FAQs</b></a></li>
+      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" onclick="openLocalFile3()"><b>About</b></a></li>
+    </ul>
+  </header>
+</div>
+       
+       
+
+</header>
+
+
+<body>
+
+ <div style="height: 300px"> 
+ </div>
+  
+
+
+<div class="container" >
+
+  <div style="height: 50px"> </div>
+
+
+  <!-- logo-->
+  <div class="row">
+
+          <div style="background-color: rgba(0, 0, 0, 0.801); height: 200px; color: white; display: flex; align-items: center; background-size: cover;">
+              <img src="smirk.webp" style="width: 200px; height: 200px; margin-left: 2%;">
+              <div style="flex-grow: 1; text-align: left;">
+                  <h1 class="color-change" style="margin-top: 20px; margin-left: 1.5%" > <b> Hot Sales </b> </h1>            
+              </div>
+          </div>
+      </div>
+  <!-- end logo-->
+
+  <div style="height: 50px">
+
+  </div>
+  
+
+<!-- Most Popular Left -->
+<div class="row">
+  <div class="col-sm-2"> 
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="glyphicon glyphicon-th-list"></span>
+      </div>
+      <div class="list-group">
+        <a class="list-group-item" style="font-size: 25px; height: 83.4px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); position: relative;">
+          <span style="position: absolute; top: 0; left: 0; padding: 5px;"><b>Most</b></span>
+          <span style="position: absolute; bottom: 0; right: 0; padding: 5px;"><b>Popular</b></span>
+        </a>
+        <a href="#" class="list-group-item" style="height: 83.4px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Cute</b></a>
+        <a href="#" class="list-group-item" style="height: 83.4px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Metal</b></a>
+        <a href="#" class="list-group-item" style="height: 83.4px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Wooden Casket</b></a>
+        <a href="#" class="list-group-item" style="height: 83.4px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Glitter</b></a>
+        <a href="#" class="list-group-item" style="height: 83.4px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Wool</b></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel in the Middle -->
+  <div class="col-sm-8">
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="height: 500px ; width: 100% ;background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a95d7f56-1545-4646-b287-b196a61d1280/dgs6phi-41863257-055d-4f3d-ab87-5a7d56c8d458.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2E5NWQ3ZjU2LTE1NDUtNDY0Ni1iMjg3LWIxOTZhNjFkMTI4MFwvZGdzNnBoaS00MTg2MzI1Ny0wNTVkLTRmM2QtYWI4Ny01YTdkNTZjOGQ0NTguanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.QtRi_XBDcxkzyf1EnlMfi_mAK2hZfzANxIIqLvVYZLY); background-repeat: no-repeat; background-position: center; background-size: cover;">
+          <div class="container">
+            <div class="carousel-caption text-start text-white">
+              <h1>A Coffin For Every Season.</h1>
+              <p class="opacity-75">Best Deal Ever!</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Buy One And Get One Free</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="height: 500px; width: 100%; background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20230612/pngtree-funeral-casket-on-fire-image_2928299.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
+          <div class="container">
+            <div class="carousel-caption text-white">
+              <h1>Providing Excellent Service</h1>
+              <p>We Even Burn The Corpse For You!!</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Sign Up Right Away</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="height: 500px; width: 100%; background-image: url(https://www.shutterstock.com/image-photo/people-mourning-concept-woman-white-600nw-668820886.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
+          <div class="container">
+            <div class="carousel-caption text-end text-white">
+              <h1>Bury Your Loved Ones</h1>
+              <p>We Guarantee THEY Will Never Resurface Again!!!</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Let's Get Busy</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+ 
+    <!-- Panel Right -->
+    <div class="col-sm-2"> 
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-th-list"></span>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" style="font-size: 25px; height: 83.4px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); position: relative;">
+            <span class="mt-3" style="display: flex; align-items: center; justify-content: center;"><b>New Death</b></span>
+          </a>
+          <a href="#" class="list-group-item random-name" style="height: 52px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Random Name</b></a>
+          <a href="#" class="list-group-item random-name" style="height: 52px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Random Name</b></a>
+          <a href="#" class="list-group-item random-name" style="height: 52px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Random Name</b></a>
+          <a href="#" class="list-group-item random-name" style="height: 52px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Random Name</b></a>
+          <a href="#" class="list-group-item random-name" style="height: 52px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Random Name</b></a>
+          <a href="#" class="list-group-item random-name" style="height: 52px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Random Name</b></a>
+          <a href="#" class="list-group-item random-name" style="height: 52px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Random Name</b></a>
+          <a href="#" class="list-group-item random-name" style="height: 52px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>Random Name</b></a>
+        </div>
+      </div>
+    </div>
+
+
+
+<div style="height: 60px"> </div>
+
+<div class="row">
+  <div style="background-color: rgba(0, 0, 0, 0.801); height: 200px; color: white; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; position: relative;">
+    <img src="Icon_Zhongli_1.webp" style="width: 200px; height: 200px; align-self: center;">
+
+    <div style="flex-grow: 1; text-align: center;">
+        <h1 class="color-change" style="margin-left: 5% ;"> <b>Our recommendation!!</b> </h1>
+    </div>
+
+    <img src="Hu_Tao_idea.webp" style="width: 200px; height: 200px; align-self: center;">
+  </div>
+</div>
+
+
+<div style="height: 0px"> </div>
+
+
+
+
+<!-- Products with Ads on Left and Right -->
+
+<div class="container"> 
+  <div class="row"> 
+    <!-- Left Ads -->
+        <div class="col-sm-2"> 
+          <div class="list-group" style="padding-top: 10%; margin-top: 10%;"> 
+            <div class="topnav" style="background-color: rgb(0, 0, 0,0.8);">
+              <span class="mt-1" style="font-size: 19px; display: flex; align-items: center; justify-content: center; height: 35px; color: white;">
+                <b>Search</b>
+              </span>                    
+              
+              <input type="text" id="searchInput" placeholder="Search For"> 
+              <button onclick="searchInPage()">Search</button>
+                </div>
+   
+
+              <!-- Weather Widget -->
+            <!-- Weather widget from WeatherWidget.io -->
+
+            <div class="col-sm-2"> 
+              <div class="list-group" style="padding-top: 10%; margin-top: 10%; width: 165px; height: 348px;"> 
+        
+            <a class="weatherwidget-io list-group-item" href="https://forecast7.com/en/40d71n74d01/new-york/?unit=us" data-label_1="TEYVAT" data-label_2="WEATHER" data-icons="Climacons" data-theme="retro-sky" data-accent="rgba(0, 0, 0, 0.04)" data-suncolor="#ffbe6b">TEYVAT WEATHER</a>
+       </div>
+    </div>
+  </div>
+</div>
+
+        
+    <!-- End Left Ads -->
+
+    <!-- Products -->
+    <div class="col-sm-8 d-flex flex-row gap-3 mt-n5 mb-5"> 
+      <!-- Example 1 -->
+      <div class="image-container1 position-relative mb-5"> 
+        <h3 class="text-center mt-3"><b>Lilac Rose Casket Purple Finish Pink Velvet Interior</b></h3>
+        <img src="BriarRose.webp" class="img-fluid mt-3"> 
+        <div class="overlay position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white" style="background: rgba(0, 0, 0, 0.7); top: 0; left: 0;">
+          <h6>Exterior: 83L x 28W x 23.5H</h6>
+          <h6>Interior: 79” x 24”</h6>
+          <h6>Weight: 200 pounds</h6>
+          <ul class="list-unstyled text-left py-5" style="font-size: 14.5px;">
+            <li>Beautiful Purple/Lilac Finish</li>
+            <li>18 gauge steel</li>
+            <li>Light-Pink Velvet Interior</li>
+            <li>Embroidery Triple Roses on the casket's head panel</li>
+            <li>Golden Jewel-Toned Accessories</li>
+            <li>Rubber Gasket Seal</li>
+            <li>Locking mechanism</li>
+            <li>Eternal-Rest adjustable bed</li>
+            <li>Fits Standard Burial Vaults</li>
+          </ul>
+        </div> 
+      </div> 
+      <!-- End Example 1 -->
+
+      <!-- Example 2 -->
+      <div class="image-container1 position-relative mb-5"> 
+        <h3 class="text-center mt-3"><b>Funeral Casket "Roosevelt" Solid Wood</b></h3>
+        <img src="ROOSEVELT.webp" class="img-fluid mt-3"> 
+        <div class="overlay position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white" style="background: rgba(0, 0, 0, 0.7); top: 0; left: 0;">
+          <h6>Exterior: 81L x 28.5W x 22.5H</h6>
+          <h6>Interior: 79” x 23.5”</h6>
+          <h6>Weight: 210 pounds</h6>
+          <ul class="list-unstyled text-left py-5" style="font-size: 14.5px;">
+            <li>Glossy Cherry finish</li>
+            <li>Solid Poplar Wood</li>
+            <li>Ivory Velvet interior</li>
+            <li>Swing bar handles</li>
+            <li>Locking mechanism</li>
+            <li>Half couch casket</li>
+            <li>Eternal-Rest adjustable bed</li>
+            <li>Continuous Weld Construction</li>
+            <li>Fits Standard Burial Vaults</li>
+          </ul>
+        </div> 
+      </div> 
+      <!-- End Example 2 -->
+    </div> 
+    <!-- End Products -->
+
+    <!-- Right Ads -->
+    <div class="col-sm-2"> 
+      <div class="list-group" style="padding-top: 10%; margin-top: 10%;"> 
+        <div class="list-group">
+          <a class="list-group-item" style="font-size: 25px; height: 200px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); position: relative;">
+            <span class="mt-3" style="display: flex; align-items: center; justify-content: center;"><b>Number Of Satisfied Customers</b></span>
+
+        
+          <a href="#" id="counterLink" class="list-group-item" style="height: 60px; background-color: rgba(0, 0, 0, 0.801); color: white; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center;"><b>50</b></a>
+        
+        </a>
+  
+        <a href="#" class="list-group-item" style="background-image: url('ad1.2.webp'); background-size: cover; margin-top: 5%; background-position: center; border-color: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; height: 200px; background-color: white;"> 
+        </a>
+      </div> 
+    </div>
+    <!-- End Right Ads -->
+  </div> 
+</div> 
+
+
+<div style="height: 100px"> </div>
+
+
+
+<!-- button product -->
+<div class="d-flex justify-content-center py-1 mb-5 custom-gap px-3">
+  <button class="custom-button btn-primary rounded-pill px-5 mb-5" style="height: 80px; font-size: 30px;" onclick="openLocalFile()"> 
+    <b>Check Out More Here</b>
+  </button>
+</div>
+<!-- end button product -->
+
+
+
+
+
+
+<!--end service-->
+</body>
+
+
+<div style="height: 50px"> </div>
+
+
+<!--footer-->
+
+<!--weapon stock + img-->
+<div class="b-example-divider" style="background-image: url('namecard.webp'); background-position-y: 13%;"></div>
+
+<footer>
+
+
+  <!--weapon stock !-->
+<div class="container" style="color: #000000; background-image: url('namecard.webp');background-size: cover; background-repeat: no-repeat; background-position: center; background-position-y: -100px; ">
+    <div class="row">
+      <div class="col-6 col-md-2">
+        <h5 style="color: white;"><b>Be sure To Visit Our Weapon Stock!!!</b></h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Link is Right...</a></li>
+          <a href="#" class="nav-link p-0 golden-text" style="font-size: 30px;" onclick="openLocalFile()">
+            <b>Here?!</b>
+          </a>
+        </ul>
+      </div>
+
+
+
+
+  <!--img !-->
+      <div class="col-6 col-md-2 mb-3" style="gap: 50px;">
+            <div class="list-group"> 
+        <a href="#" class="list-group-item" style="background-image: url('Icon_Hu_Tao_thanks.webp') ; background-size: 200px; background-position: center; background-position-x: -23px; background-repeat: no-repeat ; border-color: rgba(0, 0, 0, 0.801); display: flex; align-items: center; justify-content: center; height: 150px; background-color: white;"> 
+        </a>
+        </div> 
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+
+      </div>
+<!--end weapon stock + img-->
+     
+
+
+      
+<!--subscribe-->
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5 style="color: white;"><b>Subscribe For New Coffin News!</b></h5>
+          <p style="color: white;">Monthly digest of what's new and exciting from us.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-primary" type="button"><b>Subscribe</b></button>
+          </div>
+        </form>
+      </div>
+   <!--end subscribe-->
+
+
+
+<!--rights and icons-->
+<div class="justify-content-between py-3 my-4" style="height: 300px;">
+            <p style="color: white;"> <b>&copy; Wangsheng_Funeral_Parlor. All rights reserved.</b></p>
+            <div class="logoCol" style="display: flex; justify-content: left; align-items: left; gap: 20px; padding-top: 3%;">
+              <div class="logoItem youtube">
+                  <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="youtube_icon.png" alt="YouTube" style="width: 50px; height: auto;">
+                  </a>
+              </div>
+              <div class="logoItem twitter">
+                  <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="twitter_icon.png" alt="Twitter" style="width: 50px; height: auto;">
+                  </a>
+              </div>
+              <div class="logoItem facebook">
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="facebook_icon.png" alt="Facebook" style="width: 50px; height: auto; margin-top: 15%;">
+                  </a>
+              </div>
+              <div class="logoItem instagram">
+                  <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="instagram_icon.png" alt="Instagram" style="width: 50px; height: auto;">
+                  </a>
+              </div>
+          </div>
+        </div>
+<!--rights and icons-->
+
+
+  </footer>
+<!--end footer-->
+
+</html>
+
+
+
